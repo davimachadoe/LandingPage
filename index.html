@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suplementos PowerFit - Aumente Seu Potencial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        .hero-section {
+            background: url('https://picsum.photos/1920/1080?random=1') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+            text-align: center;
+        }
+
+        .hero-title {
+            margin-bottom: 60px;
+        }
+
+        .cta-btn {
+            background-color: #ff7e5f;
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-size: 1.2em;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        .cta-btn:hover {
+            background-color: #feb47b;
+        }
+
+        .filter-section-select {
+            margin-right: 30px;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        .product-card-info {
+            padding: 20px;
+            text-align: center;
+        }
+        .product-card-info h3 {
+            font-size: 1.6em;
+            margin-bottom: 10px;
+        }
+        .product-card-info p {
+            font-size: 1.1em;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .product-card-info .price {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #ff7e5f;
+            margin-bottom: 15px;
+        }
+        .filter-section select, .filter-section button {
+            padding: 10px 20px;
+            font-size: 1.1em;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        footer {
+            background-color: #1e2a3d;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        footer a {
+            color: #ff7e5f;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        footer a:hover {
+            color: #feb47b;
+        }
+        .testimonial-section {
+            background-color: #f9f9f9;
+            padding: 60px 20px;
+        }
+        .testimonial-section h2 {
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .testimonial-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        .testimonial-card p {
+            font-size: 1.1em;
+            color: #666;
+        }
+        .benefits-section {
+            background-color: #ff7e5f;
+            color: white;
+            padding: 60px 20px;
+        }
+        .benefit {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .benefit i {
+            font-size: 2em;
+            margin-right: 15px;
+        }
+        .countdown {
+            text-align: center;
+            font-size: 2em;
+            color: #ff7e5f;
+        }
+        .newsletter-section {
+            background-color: #f4f4f4;
+            padding: 50px 20px;
+        }
+        .newsletter-section input {
+            padding: 10px;
+            font-size: 1.1em;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            width: 80%;
+            margin-bottom: 20px;
+        }
+        .newsletter-section button {
+            background-color: #ff7e5f;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 5px;
+        }
+        .newsletter-section button:hover {
+            background-color: #feb47b;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand ms-3" href="#">PowerFit</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto me-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div>
+            <h1 class="hero-title">Supere Seus Limites com PowerFit</h1>
+            <a href="#products" class="cta-btn">Comprar Agora</a>
+        </div>
+    </section>
+
+    <section class="filter-section py-5 text-center">
+        <div class="container">
+            <select id="categoryFilter" class="filter-section-select form-select w-auto d-inline-block mb-3">
+                <option value="all">Todos os Produtos</option>
+                <option value="protein">Proteínas</option>
+                <option value="creatine">Creatina</option>
+                <option value="preworkout">Pré-Treino</option>
+            </select>
+            <button onclick="filterProducts()" class="btn btn-danger btn-lg">Filtrar</button>
+        </div>
+    </section>
+
+    <section id="products" class="container mb-5">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- Product Card 1 -->
+            <div class="col product-card" data-category="protein">
+                <div class="card h-100">
+                    <img src="https://picsum.photos/256/256?random=1" class="card-img-top" alt="Suplemento 1">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Whey Protein Premium</h5>
+                        <p class="card-text">Com 24g de proteína por porção. Ideal para ganho de massa muscular.</p>
+                        <div class="price">R$ 159,90</div>
+                        <button class="btn btn-danger">Comprar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="col product-card" data-category="creatine">
+                <div class="card h-100">
+                    <img src="https://picsum.photos/256/256?random=2" class="card-img-top" alt="Suplemento 2">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Creatina Monohidratada</h5>
+                        <p class="card-text">Melhora a performance e força nos treinos intensos.</p>
+                        <div class="price">R$ 79,90</div>
+                        <button class="btn btn-danger">Comprar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div class="col product-card" data-category="preworkout">
+                <div class="card h-100">
+                    <img src="https://picsum.photos/256/256?random=3" class="card-img-top" alt="Suplemento 3">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Pré-Treino Explosivo</h5>
+                        <p class="card-text">Aumente sua energia e foco para treinos intensos.</p>
+                        <div class="price">R$ 99,90</div>
+                        <button class="btn btn-danger">Comprar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial-section">
+        <h2>Depoimentos de Clientes</h2>
+        <div class="container">
+            <div class="testimonial-card">
+                <p>"O PowerFit realmente me ajudou a alcançar meus objetivos. A proteína é de alta qualidade e super saborosa!" - João Silva</p>
+            </div>
+            <div class="testimonial-card">
+                <p>"Eu estava em busca de algo para melhorar minha performance nos treinos, e a Creatina PowerFit fez toda a diferença!" - Maria Oliveira</p>
+            </div>
+            <div class="testimonial-card">
+                <p>"Sempre usei suplementos comuns, mas o pré-treino PowerFit me deu a energia que eu precisava. Recomendo!" - Carlos Souza</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits-section">
+        <h2>Benefícios dos Nossos Suplementos</h2>
+        <div class="container">
+            <div class="benefit">
+                <i class="fas fa-check-circle"></i>
+                <p>Aumenta a Performance</p>
+            </div>
+            <div class="benefit">
+                <i class="fas fa-check-circle"></i>
+                <p>Potencializa o Ganho de Massa Muscular</p>
+            </div>
+            <div class="benefit">
+                <i class="fas fa-check-circle"></i>
+                <p>Melhora a Recuperação Pós-Treino</p>
+            </div>
+            <div class="benefit">
+                <i class="fas fa-check-circle"></i>
+                <p>Ingredientes de Alta Qualidade</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="countdown">
+        <div id="countdown-timer">
+            <h3>Oferta Especial! Só até:</h3>
+            <div id="countdown"></div>
+        </div>
+    </section>
+
+    <section class="newsletter-section">
+        <h2>Receba Nossas Ofertas e Novidades</h2>
+        <p>Inscreva-se na nossa newsletter e receba descontos exclusivos e dicas de treino diretamente no seu e-mail!</p>
+        <form>
+            <input type="email" placeholder="Digite seu e-mail" required>
+            <button type="submit">Inscrever-se</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 PowerFit - Todos os direitos reservados.</p>
+        <a href="#">Política de Privacidade</a> | <a href="#">Termos de Serviço</a>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+        // Countdown timer
+        var countdownDate = new Date("Feb 10, 2025 00:00:00").getTime();
+        var countdownFunction = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countdownDate - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                document.getElementById("countdown").innerHTML = "A oferta terminou!";
+            }
+        }, 1000);
+
+        // Product filter
+        function filterProducts() {
+            var selectedCategory = document.getElementById("categoryFilter").value;
+            var productCards = document.querySelectorAll('.product-card');
+            productCards.forEach(function(card) {
+                if (selectedCategory === "all" || card.getAttribute("data-category") === selectedCategory) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
