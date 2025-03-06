@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.hero-section {
+    background: url('images/background.jpg') no-repeat center center fixed; /* Usando 'fixed' para o efeito parallax */
+    background-size: cover;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    
+}
+.hero-section.active {
+    opacity: 1;
+    transform: scale(1);
+}
+.hero-section .hero-title {
+    z-index: 2;
+    font-size: 3em;
+    animation: fadeInText 2s ease-out;
+}
+.hero-section .cta-btn {
+    z-index: 2;
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-size: 1.2em;
+    text-decoration: none;
+    background-color: #ff7e5f;
+    color: white;
+    margin-top: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.5s ease, transform 1.5s ease;
+}
+.hero-section .cta-btn:hover {
+    background-color: #feb47b;
+}
+.hero-section.active .cta-btn {
+    opacity: 1;
+    transform: translateY(0);
+}
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.navbar {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.navbar-brand {
+    font-size: 1.8rem;
+}
+.navbar.shrink .navbar-brand {
+    font-size: 1.5rem; /* Diminui o tamanho do nome da marca */
+}
+.hero-title {
+    margin-bottom: 60px;
+}
+.cta-btn {
+    background-color: #ff7e5f;
+    color: white;
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-size: 1.2em;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+.cta-btn:hover {
+    background-color: #feb47b;
+}
+.filter-section-select {
+    margin-right: 30px;
+}
+.product-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+.product-card-info {
+    padding: 20px;
+    text-align: center;
+}
+.product-card-info h3 {
+    font-size: 1.6em;
+    margin-bottom: 10px;
+}
+.product-card-info p {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 15px;
+}
+.product-card-info .price {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #ff7e5f;
+    margin-bottom: 15px;
+}
+.filter-section select, .filter-section button {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+footer {
+    background-color: #1e2a3d;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+footer a {
+    color: #ff7e5f;
+    text-decoration: none;
+    font-weight: bold;
+}
+footer a:hover {
+    color: #feb47b;
+}
+.testimonial-section {
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+}
+.testimonial-section h2 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.testimonial-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+.testimonial-card p {
+    font-size: 1.1em;
+    color: #666;
+}
+.users-section {
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+}
+.users-section h2 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.users-card {
+    background: #fff;
+    padding: 20px;
+    flex: 1;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    height: 200px;
+}
+.users-card p {
+    font-size: 1.1em;
+    color: #666;
+}
+.benefits-section {
+    background-color: #ff7e5f;
+    color: white;
+    padding: 60px 20px;
+}
+.benefit {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.benefit i {
+    font-size: 2em;
+    margin-right: 15px;
+}
+.countdown {
+    text-align: center;
+    font-size: 2em;
+    color: #ff7e5f;
+}
+.newsletter-section {
+    background-color: #f4f4f4;
+    padding: 50px 20px;
+}
+.newsletter-section input {
+    padding: 10px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 80%;
+    margin-bottom: 20px;
+}
+.newsletter-section button {
+    background-color: #ff7e5f;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+}
+.newsletter-section button:hover {
+    background-color: #feb47b;
+}
